@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Analysis</title>
+<style>
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #4A4E69;
+    color: white;
+}
+header{
+    background: #22223B;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 26px;
+    font-weight: bold;
+}
+nav{
+    background: #4A4E69;
+    padding: 10px;
+    text-align: center;
+}
+nav a{
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav a:hover{ color: #22223B; }
+a{
+    color:white;
+    font-weight: bold;
+    font-size:medium;
+}
+section{
+    width: 85%;
+    margin: auto;
+    background-color: #22223B;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+}
+#id3{
+    background-color: #4A4E69;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+}
+img.graph{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+footer{
+    text-align: center;
+    padding: 20px;
+    background: #4A4E69;
+    color: white;
+    margin-top: 40px;
+        }
+</style>
+</head>
+<body>
+<header>Weather Data Analysis Project</header>
+<nav>
+    <a href="#id1">Home</a>
+    <a href="#id2">Dataset</a>
+    <a href="#id3">Visualizations</a>
+    <a href="#id4">Conclusion</a>
+    <a href="#id5">Downloads</a>
+</nav>
+
+<section id="id1">
+    <h2>Project Overview</h2>
+    <p> This project analyzes a weather dataset and explores patterns in humidity, temperature,
+        wind speed and pressure. Graphs were created using Python (Pandas, Matplotlib).</p>
+</section>
+
+<section id="id2">
+    <h2>Dataset Information</h2>
+    <p><b>Rows:</b>68474</p>
+    <p><b>Columns:</b>22</p>
+    <ul>
+    <li><b>datetime_utc:</b>Date & time recorded in UTC format</li>
+    <li><b>_conds:</b>Weather conditions(Clear, Rain, Foggy, Cloudy)</li>
+    <li><b>_dewptm:</b>Dew point</li>
+    <li><b> _fog:</b>Fog presence(1 = fog, 0 = no fog)</li>
+    <li><b>_hail:</b>Hail presence(1 = Hail, 0 = no hail)</li>
+    <li><b>_heatindexm:</b>Heat index value (feels-like temperature)</li>
+    <li><b>_hum:</b>Humidity percentage (%)</li>
+    <li><b>_precipm:</b>Precipitation amount</li>
+    <li><b>_pressurem:</b>Atmospheric pressure</li>
+    <li><b>_rain:</b>Rain indicator (1 = rain, 0 = no rain)</li>
+    <li><b>_snow:</b>Rain indicator (1 = snow, 0 = no snow)</li>
+    <li><b>_tempm:</b>Temperature (main air temperature)</li>
+    <li><b>_thunder:</b>Thunder presence (1 = thunder, 0 = no)</li>
+    <li><b>_tornado:</b>Tornado indicator (1 = tornado conditions, 0 = no)</li>
+    <li><b>_vism:</b>Visibility measurement </li>
+    <li><b>_wdird:</b>Wind direction in degrees</li>
+    <li><b>_wdird:</b>Wind direction as text</li>
+    <li><b>_windchillm:</b>Wind chill temperature (feels colder due to wind)</li>
+    <li><b>_wspdm:</b>Wind speed (average wind speed)</li>
+    </ul>
+</section>
+<section id="id3">
+    <section id="id30">
+    <h1>Data Visualizations</h1>
+    </section>
+    <section id="id31">
+    <h3>Temprature Over Time</h3>
+    <img src="temprature (1).png" class="graph">
+        <ul>
+        <li>Temperature varies moderately
+            Mean ≈ 25.45°C and Std ≈ 8.48
+            This tells you temperatures usually revolve around 25°C,but can fluctuate by about ±8°C.
+            So the climate seems neither too extreme nor perfectly stable — moderate variation is present.</li>
+        <li>Min = 1°C (rarely this low unless winter/abnormal event)
+            Max = 90°C → This is unrealistic for natural weather conditions
+            This suggests either recording error or faulty sensor readings for certain entries. 
+            These outliers should be handled before modeling.</li>
+        <li>zig-zag pattern every year indicates seasonal variation (summer=high temp,winter=low temp)</li>
+        <li>peak shows hotter months, dips shows colder months</li>
+        <li>unusually long spikes represents extreme heat conditions/data anamoly/sensor error/heat waves</li>
+        <li>cycles appear consistent</li>
+        </ul>
+    </section>
+    <section id="id32">
+        <h3>Humidity Over Time</h3>
+        <img src="Humidity (1).png" class="graph">
+        <ul>
+            <li>Average humidity is moderate 
+                Mean ≈ 51.8% and Median (50%) is close to mean.This shows humidity distribution is fairly balanced,
+                 not heavily skewed — typically mid-range humidity.</li>
+            <li>Min = 4% → very dry conditions</li>
+            <li>Max = 99% → extremely humid (almost saturated air)</li>
+        </ul>
+    </section>
+    <section id="id33">
+        <h3>Pressure Variation</h3>
+        <img src="Pressure (1).png" class="graph">
+        <ul>
+            <li>restricted the range to 900–1100 hPa, which is the true atmospheric range on Earth under normal conditions,
+                as there were large anamoly values. </li>
+                <li>Min = 929 hPa and Max = 1099 hPa. Mean ≈ 1008, Median (50%) = 1008 and Std = 7.34</li>
+             <li>Shows zig-zag pattern due to continuos shifts between high and low pressure , 
+                indicating normal weather variations over time.</li>
+            <li>unusually long spikes represents data anamoly/sensor error</li>   
+        </ul>
+    </section>
+    <section id="id34">
+        <h3>Wind Speed Over Time</h3>
+        <img src="Wind (1).png" class="graph">
+        <ul>
+            <li>Mean ≈ 10.84 mph ,Median = 9.3 mph and Max ≈ 192 mph---Possible extreme storm or anamoly</li>
+            <li>Occasional extreme spikes represent- Severe storms /cyclones/Hurricane-like weather events/Sensor or data recording errors</li>
+            <li>no long-term upward or downward trend, meaning wind intensity has not consistently increased or decreased over the years</li>
+            <li>wind speeds may increase during monsoon or storm seasons, but stay calmer in summers/winters.</li>
+        </ul>
+    </section>
+    <section id="id35">
+        <h3>Pie Chart Of Weather Conditions</h3>
+        <img src="Weather (1).png" class="graph">
+        <ul>
+            <li>The counts of Weather Conditions are:
+                <ul>
+                <li>Haze-36670</li>
+                <li>Smoke-12621</li>
+                <li>Mist-3283</li>
+                <li>Widespread Dust-2454</li>
+                <li>Clear-2408</li>
+                <li>Scattered Clouds-1797</li>
+                <li>Partly Cloudy-1706</li>
+                <li>Fog-1354</li>
+                <li>Mostly Cloudy-1157</li>
+                <li>Light Rain-972</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</section>    
+<section id="id4">
+    <h2>Conclusion</h2>
+    <ul>
+        <li>The analysis of the dataset reveals that although a large volume of weather information was available,
+             several columns initially contained missing values, incorrect entries, and unrealistic sensor readings. 
+             Through step-by-step data cleaning — especially for temperature, humidity, pressure, and wind speed — 
+             the dataset was refined into a reliable and usable form.</li>
+        <li>The dataset, after cleaning, clearly suggests that the recorded region/time period experienced:Moderate temperature,Balanced humidity,
+            Stable atmospheric pressure,Low rainfall,High levels of haze and smoke
+        </ul>
+</section>        
+<section id="id5">
+    <h2>Download Project Files</h2>
+    <a href="testset.csv" download>Weather Dataset CSV</a><br>
+    <a href="notebook.ipynb" download>Weather Analysis Jupyter Notebook</a>
+</section>
+<footer>
+    Developed by Harapriya | Data Science Project
+</footer>
+</body>
+</html>
