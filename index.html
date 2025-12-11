@@ -45,7 +45,7 @@ section{
     border-radius: 8px;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
 }
-#id3{
+#Visualizations{
     background-color: #4A4E69;
     box-shadow: 0px 0px 0px rgba(0,0,0,0);
 }
@@ -66,20 +66,20 @@ footer{
 <body>
 <header>Weather Data Analysis Project</header>
 <nav>
-    <a href="#id1">Home</a>
-    <a href="#id2">Dataset</a>
-    <a href="#id3">Visualizations</a>
-    <a href="#id4">Conclusion</a>
-    <a href="#id5">Downloads</a>
+    <a href="#Home">Home</a>
+    <a href="#Dataset">Dataset</a>
+    <a href="#Visualizations">Visualizations</a>
+    <a href="#Conclusion">Conclusion</a>
+    <a href="#Downloads">Downloads</a>
 </nav>
 
-<section id="id1">
+<section id="Home">
     <h2>Project Overview</h2>
     <p> This project analyzes a weather dataset and explores patterns in humidity, temperature,
         wind speed and pressure. Graphs were created using Python (Pandas, Matplotlib).</p>
 </section>
 
-<section id="id2">
+<section id="Dataset">
     <h2>Dataset Information</h2>
     <p><b>Rows:</b>68474</p>
     <p><b>Columns:</b>22</p>
@@ -105,62 +105,61 @@ footer{
     <li><b>_wspdm:</b>Wind speed (average wind speed)</li>
     </ul>
 </section>
-<section id="id3">
-    <section id="id30">
+<section id="Visualizations">
+    <section id="Data Visualizations">
     <h1>Data Visualizations</h1>
     </section>
-    <section id="id31">
+    <section id="Temprature">
     <h3>Temprature Over Time</h3>
     <img src="temprature (1).png" class="graph">
         <ul>
         <li>Temperature varies moderately
-            Mean ≈ 25.45°C and Std ≈ 8.48
-            This tells you temperatures usually revolve around 25°C,but can fluctuate by about ±8°C.
-            So the climate seems neither too extreme nor perfectly stable — moderate variation is present.</li>
+            Mean = 25.45°C and Std = 8.48
+            This tells you temperatures usually revolve around 25°C,but can fluctuate by about (+-)8°C.
+            So the climate seems neither too extreme nor perfectly stable , moderate variation is present.</li>
         <li>Min = 1°C (rarely this low unless winter/abnormal event)
-            Max = 90°C → This is unrealistic for natural weather conditions
-            This suggests either recording error or faulty sensor readings for certain entries. 
-            These outliers should be handled before modeling.</li>
+            Max = 90°C ,This is unrealistic for natural weather conditions
+            This suggests either recording error or faulty sensor readings for certain entries. </li>
         <li>zig-zag pattern every year indicates seasonal variation (summer=high temp,winter=low temp)</li>
         <li>peak shows hotter months, dips shows colder months</li>
         <li>unusually long spikes represents extreme heat conditions/data anamoly/sensor error/heat waves</li>
         <li>cycles appear consistent</li>
         </ul>
     </section>
-    <section id="id32">
+    <section id="Humidity">
         <h3>Humidity Over Time</h3>
         <img src="Humidity (1).png" class="graph">
         <ul>
             <li>Average humidity is moderate 
-                Mean ≈ 51.8% and Median (50%) is close to mean.This shows humidity distribution is fairly balanced,
-                 not heavily skewed — typically mid-range humidity.</li>
-            <li>Min = 4% → very dry conditions</li>
-            <li>Max = 99% → extremely humid (almost saturated air)</li>
+                Mean = 51.8% and Median (50%) is close to mean.This shows humidity distribution is fairly balanced,
+                 not heavily skewed ,typically mid-range humidity.</li>
+            <li>Min = 4% ,very dry conditions</li>
+            <li>Max = 99% , extremely humid (almost saturated air)</li>
         </ul>
     </section>
-    <section id="id33">
+    <section id="Pressure">
         <h3>Pressure Variation</h3>
         <img src="Pressure (1).png" class="graph">
         <ul>
             <li>restricted the range to 900–1100 hPa, which is the true atmospheric range on Earth under normal conditions,
                 as there were large anamoly values. </li>
-                <li>Min = 929 hPa and Max = 1099 hPa. Mean ≈ 1008, Median (50%) = 1008 and Std = 7.34</li>
+                <li>Min = 929 hPa and Max = 1099 hPa. Mean = 1008, Median (50%) = 1008 and Std = 7.34</li>
              <li>Shows zig-zag pattern due to continuos shifts between high and low pressure , 
                 indicating normal weather variations over time.</li>
             <li>unusually long spikes represents data anamoly/sensor error</li>   
         </ul>
     </section>
-    <section id="id34">
+    <section id="Wind">
         <h3>Wind Speed Over Time</h3>
         <img src="Wind (1).png" class="graph">
         <ul>
-            <li>Mean ≈ 10.84 mph ,Median = 9.3 mph and Max ≈ 192 mph---Possible extreme storm or anamoly</li>
-            <li>Occasional extreme spikes represent- Severe storms /cyclones/Hurricane-like weather events/Sensor or data recording errors</li>
+            <li>Mean = 10.84 mph ,Median = 9.3 mph and Max = 192 mph, Possible extreme storm or anamoly</li>
+            <li>Occasional extreme spikes represent- Severe storms /cyclones/Hurricane like weather events/Sensor or data recording errors</li>
             <li>no long-term upward or downward trend, meaning wind intensity has not consistently increased or decreased over the years</li>
             <li>wind speeds may increase during monsoon or storm seasons, but stay calmer in summers/winters.</li>
         </ul>
     </section>
-    <section id="id35">
+    <section id="Weather">
         <h3>Pie Chart Of Weather Conditions</h3>
         <img src="Weather (1).png" class="graph">
         <ul>
@@ -181,24 +180,24 @@ footer{
         </ul>
     </section>
 </section>    
-<section id="id4">
+<section id="Conclusion">
     <h2>Conclusion</h2>
     <ul>
         <li>The analysis of the dataset reveals that although a large volume of weather information was available,
              several columns initially contained missing values, incorrect entries, and unrealistic sensor readings. 
-             Through step-by-step data cleaning — especially for temperature, humidity, pressure, and wind speed — 
+             Through step-by-step data cleaning ,especially for temperature, humidity, pressure, and wind speed , 
              the dataset was refined into a reliable and usable form.</li>
         <li>The dataset, after cleaning, clearly suggests that the recorded region/time period experienced:Moderate temperature,Balanced humidity,
             Stable atmospheric pressure,Low rainfall,High levels of haze and smoke
         </ul>
 </section>        
-<section id="id5">
+<section id="Downloads">
     <h2>Download Project Files</h2>
     <a href="testset.csv" download>Weather Dataset CSV</a><br>
     <a href="WeatherAnalysis (1).ipynb" download>Weather Analysis Jupyter Notebook</a>
 </section>
 <footer>
-    Developed by Harapriya | Data Science Project
+    Harapriya | Data Science Project
 </footer>
 </body>
 </html>
